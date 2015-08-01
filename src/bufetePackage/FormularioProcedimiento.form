@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabelNumeroProcedimiento" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelTipoProcedimiento" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelProcurador" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelProcuradorContrario1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelDNICliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelProcuradorContrario2" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelJuzgado" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelMinuta" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelFecha" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jTextFieldTipoProcedimiento" min="-2" pref="192" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jLabelEstadoProcediminto" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                      <Component id="jCheckBoxAbierto" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jTextFieldJuzgado" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jTextFieldProcurador" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jTextFieldProcuradorContrario" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jTextFieldNumeroProcedimiento" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jTextFieldDNICliente" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jTextFieldPagado" min="-2" pref="152" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="jLabelPagado" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="49" max="32767" attributes="0"/>
+                      <Component id="jTextFieldMinuta" min="-2" pref="132" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                      <Component id="jLabelDia" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jTextFieldDia" min="-2" pref="38" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jLabelMes" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jTextFieldMes" min="-2" pref="35" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="jLabelYear" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jTextFieldYear" min="-2" pref="57" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="18" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jButtonAddProcedimiento" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="201" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabelDNICliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldDNICliente" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabelNumeroProcedimiento" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldNumeroProcedimiento" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jTextFieldJuzgado" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelJuzgado" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabelEstadoProcediminto" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCheckBoxAbierto" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelTipoProcedimiento" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldTipoProcedimiento" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jTextFieldPagado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelPagado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldMinuta" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabelDia" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jLabelMinuta" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabelFecha" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldDia" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelMes" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldMes" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelYear" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldYear" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabelProcurador" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldProcurador" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabelProcuradorContrario1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldProcuradorContrario" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLabelProcuradorContrario2" min="-2" pref="15" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jButtonAddProcedimiento" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="16" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JTextField" name="jTextFieldNumeroProcedimiento">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldJuzgado">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldTipoProcedimiento">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldMinuta">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelNumeroProcedimiento">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="N&#xba; Procedimiento"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelJuzgado">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Juzgado"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelTipoProcedimiento">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tipo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelMinuta">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Minuta"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelEstadoProcediminto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Estado"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="jCheckBoxAbierto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Abierto"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelPagado">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Pagado"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldPagado">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelFecha">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Fecha"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldDia">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelProcurador">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Procurador"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldProcurador">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelProcuradorContrario1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Procurador"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelProcuradorContrario2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Contrario"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelDNICliente">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="DNI Cliente"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldDNICliente">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldProcuradorContrario">
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonAddProcedimiento">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="A&#xf1;adir procedimiento"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAddProcedimientoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelDia">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="D&#xed;a"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelMes">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mes"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldMes">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelYear">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="A&#xf1;o"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldYear">
+    </Component>
+  </SubComponents>
+</Form>
