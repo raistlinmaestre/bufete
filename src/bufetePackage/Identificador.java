@@ -22,7 +22,6 @@ public class Identificador {
     public int getNumero() {
         return numero;
     }
-
     /**
      * Set the value of numero
      *
@@ -31,8 +30,6 @@ public class Identificador {
     public void setNumero(int numero) {
         this.numero = numero;
     }
-
-    
     /**
      * Get the value of control
      *
@@ -41,7 +38,6 @@ public class Identificador {
     public char getControl() {
         return control;
     }
-
     /**
      * Set the value of control
      *
@@ -50,7 +46,6 @@ public class Identificador {
     public void setControl(char control) {
         this.control = control;
     }
-
     /**
      * Get the value of letra
      *
@@ -59,7 +54,6 @@ public class Identificador {
     public char getLetra() {
         return letra;
     }
-
     /**
      * Set the value of letra
      *
@@ -68,7 +62,10 @@ public class Identificador {
     public void setLetra(char letra) {
         this.letra = letra;
     }
-    
+    /**
+     * Instancia del método toString
+     * @return DNI del cliente
+     */
     public String toString(){
         String cadena = new String();
         if (letra != '\000')
@@ -76,24 +73,29 @@ public class Identificador {
         cadena += Integer.toString(numero)+control;
         return cadena;
     }
-  
-  
+    /**
+     * Constructor explícito para NIG que calcula el dígito de control
+     * 
+     * @param letra Letra de inicio del NIG
+     * @param numero Número del NIG
+     */
     public Identificador(char letra, int numero) {
         this.letra = letra;
         this.numero = numero;
         this.control = Identificador.calcularControl(numero);
     }
-
+    /** 
+     * Constructor explícito para DNI que calcula el dígito de control
+     * 
+     * @param numero Número del DNI
+     */
     public Identificador(int numero) {
         this.letra = '\000';
         this.numero = numero;
         this.control = Identificador.calcularControl(numero);
     }
-
-    public Identificador() {
-    }
     /**
-     * Establece el número y el carácter de control a partir de un String de 9 caracteres con los mismos
+     * Constructor explícito a partir de String
      * 
      * @param nif String de 9 caracteres. 8 serán numéricos y el 9º alfabético
      */
@@ -101,12 +103,11 @@ public class Identificador {
         this.control = nif.charAt(8);
         this.numero = Integer.parseInt(nif.substring(0,8));
     }
-    
-   /** Comprueba si el dígito de control es el correcto, devuelve falso en caso contrario.
-   * @param numero Número del NIF
-   * @param control Dígito de control
-   * @return Devuelve verdadero si coincide
-   */
+    /** Comprueba si el dígito de control es el correcto, devuelve falso en caso contrario.
+     * @param numero Número del NIF
+     * @param control Dígito de control
+     * @return Devuelve verdadero si coincide
+     */
     public static boolean comporbarControl(int numero, char control){
         if (Character.isLowerCase(control))
             control = Character.toUpperCase(control);
@@ -114,8 +115,13 @@ public class Identificador {
             return true;
         return false;
     }
-    //De momento sólo calcula para el DNI
-    public static char calcularControl(int numero){
+    /**
+     * Calcula el dígito de control
+     * 
+     * @param numero Número del identificador
+     * @return Dígito de control
+     */
+    public static char calcularControl(int numero){//De momento sólo calcula para el DNI TODO: Resto
         char control;
         int resto;
         resto = numero % 23;

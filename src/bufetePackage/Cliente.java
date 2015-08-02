@@ -9,7 +9,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- *
+ * Clase que rige los clientes
+ * 
  * @author draco
  */
 public class Cliente implements Serializable {
@@ -31,7 +32,6 @@ public class Cliente implements Serializable {
     public boolean isJuridica() {
         return juridica;
     }
-
     /**
      * Set the value of juridica
      *
@@ -40,8 +40,6 @@ public class Cliente implements Serializable {
     public void setJuridica(boolean juridica) {
         this.juridica = juridica;
     }
-
-
     /**
      * Get the value of anotaciones
      *
@@ -50,7 +48,6 @@ public class Cliente implements Serializable {
     public String getAnotaciones() {
         return anotaciones;
     }
-
     /**
      * Set the value of anotaciones
      *
@@ -59,7 +56,6 @@ public class Cliente implements Serializable {
     public void setAnotaciones(String anotaciones) {
         this.anotaciones = anotaciones;
     }
-
     /**
      * Get the value of domicilio
      *
@@ -68,7 +64,6 @@ public class Cliente implements Serializable {
     public Domicilio getDomicilio() {
         return domicilio;
     }
-
     /**
      * Set the value of domicilio
      *
@@ -77,8 +72,6 @@ public class Cliente implements Serializable {
     public void setDomicilio(Domicilio domicilio) {
         this.domicilio = domicilio;
     }
-
-
     /**
      * Get the value of identificador
      *
@@ -87,7 +80,6 @@ public class Cliente implements Serializable {
     public Identificador getIdentificador() {
         return identificador;
     }
-
     /**
      * Set the value of identificador
      *
@@ -96,8 +88,6 @@ public class Cliente implements Serializable {
     public void setIdentificador(Identificador identificador) {
         this.identificador = identificador;
     }
-
-
     /**
      * Get the value of apellido2
      *
@@ -106,7 +96,6 @@ public class Cliente implements Serializable {
     public String getApellido2() {
         return apellido2;
     }
-
     /**
      * Set the value of apellido2
      *
@@ -115,8 +104,6 @@ public class Cliente implements Serializable {
     public void setApellido2(String apellido2) {
         this.apellido2 = apellido2;
     }
-
-
     /**
      * Get the value of apellido1
      *
@@ -125,7 +112,6 @@ public class Cliente implements Serializable {
     public String getApellido1() {
         return apellido1;
     }
-
     /**
      * Set the value of apellido1
      *
@@ -134,8 +120,6 @@ public class Cliente implements Serializable {
     public void setApellido1(String apellido1) {
         this.apellido1 = apellido1;
     }
-
-
     /**
      * Get the value of nombre
      *
@@ -144,7 +128,6 @@ public class Cliente implements Serializable {
     public String getNombre() {
         return nombre;
     }
-
     /**
      * Set the value of nombre
      *
@@ -153,18 +136,18 @@ public class Cliente implements Serializable {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
     /**
      * Añade un procedimiento a la lista
+     * 
      * @param procedimiento 
      */
     public void addProcedimiento(Procedimiento procedimiento){
         listaProcedimientos.add(procedimiento);
     }
     /**
-     * 
-     * @param num
-     * @return 
+     * Devuelve el procedimiento seleccionado
+     * @param num Número en la lista de procedimientos
+     * @return Procedimiento a
      */
     public Procedimiento getProcedimiento(int num){
         if (listaProcedimientos.size() != 0)
@@ -172,26 +155,28 @@ public class Cliente implements Serializable {
         else
             return null;
     }
-    
+    /**
+     * Devuelve la lista de procedimientos
+     * 
+     * @return Lista de procedimientos
+     */
     public ArrayList<Procedimiento> getListaProcedimientos(){
         if (listaProcedimientos.size() != 0)
             return listaProcedimientos;
         else
             return null;
     }
-    
-    
-    
     /**
+     * Constructor explícito
      * 
-     * @param nombre
-     * @param apellido1
-     * @param apellido2
-     * @param identificador
-     * @param domicilio 
+     * @param nombre Nombre del cliente
+     * @param apellido1 Primer apellido del cliente
+     * @param apellido2 Segundo apellido del cliente
+     * @param identificador DNI del cliente
+     * @param domicilio Domicilio del cliente
      */
-
-    public Cliente(String nombre, String apellido1, String apellido2, Identificador identificador, Domicilio domicilio) {
+    public Cliente(String nombre, String apellido1, String apellido2,
+            Identificador identificador, Domicilio domicilio) {
         this.nombre = nombre;
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
@@ -200,7 +185,9 @@ public class Cliente implements Serializable {
         this.listaProcedimientos = new ArrayList<Procedimiento>();
         this.anotaciones = null;
     }
-
+    /**
+     * Contructor por defecto
+     */
     public Cliente() {
         this.nombre = null;
         this.apellido1 = null;
@@ -210,7 +197,5 @@ public class Cliente implements Serializable {
         this.listaProcedimientos = new ArrayList<Procedimiento>();
         this.anotaciones = null;
     }
-    
-    
     
 }

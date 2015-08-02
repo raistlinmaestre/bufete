@@ -504,6 +504,7 @@ public class BufeteJFrame extends javax.swing.JFrame {
 
     /**
      * Cambia el tipo de búsqueda al seleccionado en jComboBoxBuscador
+     * 
      * @param evt 
      */
     private void jComboBoxBuscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxBuscadorActionPerformed
@@ -511,6 +512,7 @@ public class BufeteJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxBuscadorActionPerformed
     /**
      * Cierra la conexión con la base de datos y finaliza el programa
+     * 
      * @param evt 
      */
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
@@ -542,6 +544,7 @@ public class BufeteJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldBuscadorKeyTyped
     /**
      * Realiza una búsqueda al hacer clic en el botón de búsqueda
+     * 
      * @param evt 
      */
     private void jButtonBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonBuscarMouseClicked
@@ -564,7 +567,6 @@ public class BufeteJFrame extends javax.swing.JFrame {
      */
     private void jListClientesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListClientesValueChanged
         if ((evt.getValueIsAdjusting() == false) && gestion.isConnected()){
-            
             String identificador = new String();
             identificador = listaClientes.get(jListClientes.getSelectedIndex())[1];
             clienteActual = gestion.busquedaDatos(identificador);
@@ -634,12 +636,11 @@ public class BufeteJFrame extends javax.swing.JFrame {
                 jTextFieldPagado.setText("");
                 jTextAreaAnotacionesProcedimiento.setText("");
             }
-            
         }
-        
     }//GEN-LAST:event_jListClientesValueChanged
     /**
      * Busca los datos del procedimiento seleccionado
+     * 
      * @param evt 
      */
     private void jComboBoxProcedimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxProcedimientoActionPerformed
@@ -671,6 +672,7 @@ public class BufeteJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxProcedimientoActionPerformed
     /**
      * Actualiza los datos del cliente al hacer clic en el botón
+     * 
      * @param evt 
      */
     private void jButtonActualizarDatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonActualizarDatosMouseClicked
@@ -683,12 +685,12 @@ public class BufeteJFrame extends javax.swing.JFrame {
             String domicilio = jTextFieldDomicilio.getText();
             String localidad = jTextFieldLocalidad.getText();
             String codigo = jTextFieldCodigo.getText();
-        
             gestion.updateCliente(nombre, apellido1, apellido2, nif, juridica, domicilio, localidad, codigo, nif);
         }
     }//GEN-LAST:event_jButtonActualizarDatosMouseClicked
     /**
      * Actualiza los datos del procedimiento al hacer clic en el botón
+     * 
      * @param evt 
      */
     private void jButtonActualizarProcedimientoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonActualizarProcedimientoMouseClicked
@@ -714,6 +716,7 @@ public class BufeteJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonActualizarProcedimientoMouseClicked
     /**
      * Crea una ventana para introducir los datos del usuario y conectarse
+     * 
      * @param evt 
      */
     private void jMenuItemConectarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConectarUsuarioActionPerformed
@@ -722,19 +725,22 @@ public class BufeteJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemConectarUsuarioActionPerformed
     /**
      * Crea un formulario para añadir un nuevo cliente
+     * 
      * @param evt 
      */
     private void jMenuItemAñadirClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAñadirClienteActionPerformed
         FormularioCliente formulario = new FormularioCliente(gestion, "Nuevo cliente");
         formulario.setVisible(true);
     }//GEN-LAST:event_jMenuItemAñadirClienteActionPerformed
-
+    /**
+     * Crea un formulario para añadir un nuevo procedimiento
+     * @param evt 
+     */
     private void jMenuItemAñadirProcedimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAñadirProcedimientoActionPerformed
         FormularioProcedimiento formulario = new FormularioProcedimiento(gestion, "Nuevo procedimiento");
         formulario.setVisible(true);
     }//GEN-LAST:event_jMenuItemAñadirProcedimientoActionPerformed
 
-    
     /**
      * @param args the command line arguments
      */
@@ -837,12 +843,11 @@ public class BufeteJFrame extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     
     private javax.swing.DefaultListModel modeloListaClientes;
-    // Declaración de variables propias
-    
     private static Connection con;
     private static final String url = "jdbc:mysql://localhost:3306/bufete";
     private static GestionBufete gestion;
     private int tipoBusqueda;
     private ArrayList<String[]> listaClientes;
     private Cliente clienteActual;
+    
 }

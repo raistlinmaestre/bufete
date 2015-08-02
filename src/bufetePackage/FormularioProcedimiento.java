@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 draco
+ * Copyright (C) 2015 RaistlinMaestre
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,62 +21,100 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 /**
- *
+ * Formulario para introducir un nuevo procedimiento
+ * 
  * @author draco
  */
 public class FormularioProcedimiento extends javax.swing.JFrame {
 
     /**
-     * Creates new form FormularioProcedimiento
+     * Constructor de la clase
+     * 
+     * @param gestion Instancia para la gestión de la base de datos
+     * @param cabecera Título de la ventana
      */
     public FormularioProcedimiento(GestionBufete gestion, String cabecera) {
         super(cabecera);
         this.gestion = gestion;
         initComponents();
     }
-
+    /**
+     * Comprueba si está seleccionado el campo 'Abierto'
+     * @return Devuelve verdadero si el campo 'Abierto' está seleccionado
+     */
     public boolean isAbierto() {
         return jCheckBoxAbierto.isSelected();
     }
-
+    /**
+     * Rescata el valor intrudicido en el campo 'DNI Cliente'
+     * @return DNI del cliente
+     */
     public String getDNICliente() {
         return jTextFieldDNICliente.getText();
     }
-
+    /**
+     * Rescata el valor intrudicido en los campos 'Día', 'Mes' y "Año'
+     * @return Fecha de vencimiento
+     */
     public String getFecha() {
         String fecha = jTextFieldYear.getText()+"-"+jTextFieldMes.getText()+"-"+jTextFieldDia.getText();
                 return fecha;
     }
-
+    /**
+     * Rescata el valor intrudicido en el campo 'Juzgado'
+     * 
+     * @return Juzgado que lleva el procedimiento
+     */
     public String getJuzgado() {
         return jTextFieldJuzgado.getText();
     }
-
+    /**
+     * Rescata el valor intrudicido en el campo 'Minuta'
+     * 
+     * @return Pago acordado
+     */
     public String getMinuta() {
         return jTextFieldMinuta.getText();
     }
-
+    /**
+     * Rescata el valor intrudicido en el campo 'Nº Procedimiento'
+     * 
+     * @return Número del procedimiento
+     */
     public String getNumeroProcedimiento() {
         return jTextFieldNumeroProcedimiento.getText();
     }
-
+    /**
+     * Rescata el valor intrudicido en el campo 'Pagado'
+     * 
+     * @return Cantidad abonada hasta la fecha
+     */
     public String getPagado() {
         return jTextFieldPagado.getText();
     }
-
+    /**
+     * Rescata el valor intrudicido en el campo 'Procurador'
+     * 
+     * @return Procurador de la parte contratante
+     */
     public String getProcurador() {
         return jTextFieldProcurador.getText();
     }
-
+    /**
+     * Rescata el valor intrudicido en el campo 'Procurador contrario'
+     * @return Procurador de la parte contraria
+     */
     public String getProcuradorContrario() {
         return jTextFieldProcuradorContrario.getText();
     }
-
+    /**
+     * Rescata el valor intrudicido en el campo 'Tipo'
+     * @return Tipo de procedimiento
+     */
     public String getTipoProcedimiento() {
         return jTextFieldTipoProcedimiento.getText();
     }
 
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -264,7 +302,11 @@ public class FormularioProcedimiento extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Añade el nuevo procedimiento
+     * 
+     * @param evt 
+     */
     private void jButtonAddProcedimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddProcedimientoActionPerformed
         // TODO add your handling code here:
         gestion.addProcedimiento(this.getDNICliente(), this.getNumeroProcedimiento(), this.getJuzgado(),
@@ -273,7 +315,6 @@ public class FormularioProcedimiento extends javax.swing.JFrame {
                 this.getProcuradorContrario());
         this.dispose();
     }//GEN-LAST:event_jButtonAddProcedimientoActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAddProcedimiento;
@@ -305,4 +346,5 @@ public class FormularioProcedimiento extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldYear;
     // End of variables declaration//GEN-END:variables
     private GestionBufete gestion;
+    
 }

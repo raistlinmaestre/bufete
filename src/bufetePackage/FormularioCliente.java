@@ -10,57 +10,85 @@ import javax.swing.JCheckBox;
 import javax.swing.JTextField;
 
 /**
- *
+ * Formulario para introducir un nuevo cliente
+ * 
  * @author draco
  */
 public class FormularioCliente extends javax.swing.JFrame {
 
     /**
-     * Creates new form Formulario
+     * Comprueba si está seleccionado el campo 'Jurídica'
+     * @return Devuelve verdadero si el campo 'Jurídica' está seleccionado
      */
-    public FormularioCliente() {
-        initComponents();
-    }
-
     public boolean isJuridica() {
         return jCheckBoxJuridica.isSelected();
     }
-
+    /**
+     * Rescata el valor intrudicido en el campo 'Apellido1'
+     * 
+     * @return Primer apellido del cliente
+     */
     public String getApellido1() {
         return jTextFieldApellido1.getText();
     }
-
+    /**
+     * Rescata el valor intrudicido en el campo 'Apellido2'
+     * 
+     * @return Segundo apellido del cliente
+     */
     public String getApellido2() {
         return jTextFieldApellido2.getText();
     }
-
+    /**
+     * Rescata el valor intrudicido en el campo 'Código'
+     * 
+     * @return Código postal del cliente
+     */
     public String getCodigo() {
         return jTextFieldCodigo.getText();
     }
-
+    /**
+     * Rescata el valor intrudicido en el campo 'Domicilio'
+     * 
+     * @return Domicilio ddel cliente
+     */
     public String getDomicilio() {
         return jTextFieldDomicilio.getText();
     }
-
+    /**
+     * Rescata el valor intrudicido en el campo 'DNI'
+     * @return DNI del cliente
+     */
     public String getIdentificador() {
         return jTextFieldIdentificador.getText();
     }
-
+    /**
+     * Rescata el valor intrudicido en el campo 'Localidad'
+     * 
+     * @return Localidad de residencia del cliente
+     */
     public String getLocalidad() {
         return jTextFieldLocalidad.getText();
     }
-
+    /**
+     * Rescata el valor intrudicido en el campo 'Nombre'
+     * @return Nombre del cliente
+     */
     public String getNombre() {
         return jTextFieldNombre.getText();
     }
-
+    /**
+     * Constructor de la clase
+     * 
+     * @param gestion Instancia para la gestión de la base de datos
+     * @param cabecera Título de la ventana
+     * @throws HeadlessException 
+     */
     public FormularioCliente(GestionBufete gestion, String cabecera) throws HeadlessException {
         super(cabecera);
         this.gestion = gestion;
         this.initComponents();
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -192,7 +220,11 @@ public class FormularioCliente extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * Añade el nuevo cliente
+ * 
+ * @param evt 
+ */
     private void jButtonAddClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddClienteActionPerformed
         // TODO add your handling code here:
         gestion.addCliente(this.getNombre(), this.getApellido1(), this.getApellido2(),
@@ -200,8 +232,6 @@ public class FormularioCliente extends javax.swing.JFrame {
                 this.getLocalidad(), Integer.parseInt(this.getCodigo()));
         this.dispose();
     }//GEN-LAST:event_jButtonAddClienteActionPerformed
-
-   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAddCliente;

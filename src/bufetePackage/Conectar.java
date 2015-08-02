@@ -8,21 +8,24 @@ package bufetePackage;
 import java.awt.HeadlessException;
 
 /**
- *
+ * Formulario para introducir las credenciales para conectar con la base de datos
+ * 
  * @author draco
  */
 public class Conectar extends javax.swing.JFrame {
 
     /**
-     * Creates new form Conecar
+     * Constructor de la clase
+     * 
+     * @param gestion 
+     * @param string
+     * @throws HeadlessException 
      */
     public Conectar(GestionBufete gestion, String string ) throws HeadlessException {
         super(string);
         this.gestion = gestion;
         this.initComponents();
     }
-
-    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -104,14 +107,16 @@ public class Conectar extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * Realiza la conexión con la base de datos
+ * 
+ * @param evt 
+ */
     private void jButtonConectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConectarActionPerformed
-        // TODO add your handling code here:
         String contraseña = new String (jPasswordFieldContraseña.getPassword());
         GestionBufete.establecerConexion(jTextFieldUsuario.getText(), contraseña);
         this.dispose();
     }//GEN-LAST:event_jButtonConectarActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonConectar;
@@ -121,6 +126,6 @@ public class Conectar extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordFieldContraseña;
     private javax.swing.JTextField jTextFieldUsuario;
     // End of variables declaration//GEN-END:variables
-
     private GestionBufete gestion;
+    
 }

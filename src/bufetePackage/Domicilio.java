@@ -79,56 +79,104 @@ public class Domicilio {
     public void setLocalidad(String localidad) {
         this.localidad = localidad;
     }
-
-
+    /**
+     * Get de value of direccion
+     * 
+     * @return direccion value of direccion
+     */
     public String getDireccion() {
         return direccion;
     }
-
+    /**
+     * Get the value of escalera
+     * 
+     * @return escalera value of escalera
+     */
     public int getEscalera() {
         return escalera;
     }
-
+    /**
+     * Get the value of letra
+     * 
+     * @return letra value of letra
+     */
     public char getLetra() {
         return letra;
     }
-
+    /**
+     * Get the value of portal
+     * 
+     * @return portal value of portal
+     */
     public int getPortal() {
         return portal;
     }
-
+    /** Get the value of tipoDeVia
+     * 
+     * @return tipoDeVia value of tipoDeVia
+     */
     public int getTipoDeVia() {
         return tipoDeVia;
     }
-
+    /**
+     * Get the value of edificio
+     * 
+     * @return edificio value of edificio
+     */
     public String getEdificio() {
         return edificio;
     }
-
+    /**
+     * Set the value of direccion
+     * 
+     * @param direccion new value of direccion
+     */
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-
+    /**
+     * Set the value of edificio
+     * 
+     * @param edificio new value of edificio
+     */
     public void setEdificio(String edificio) {
         this.edificio = edificio;
     }
-
+    /**
+     * Set the value of tipoDeVia
+     * 
+     * @param tipoDeVia new value of tipoDeVia
+     */
     public void setTipoDeVia(int tipoDeVia) {
         this.tipoDeVia = tipoDeVia;
     }
-
+    /**
+     * Set the value of portal
+     * 
+     * @param portal new value of portal
+     */
     public void setPortal(int portal) {
         this.portal = portal;
     }
-
+    /**
+     * Set the value of escalera
+     * 
+     * @param escalera 
+     */
     public void setEscalera(int escalera) {
         this.escalera = escalera;
     }
-
+    /** 
+     * Set the value of letra
+     * @param letra new value of letra
+     */
     public void setLetra(char letra) {
         this.letra = letra;
     }
-    
+    /**
+     * Instancia del método toString()
+     * @return Dirección completa
+     */
     public String toString(){
         String cadena = new String();
         /*switch (tipoDeVia) {
@@ -160,7 +208,16 @@ public class Domicilio {
        
         return cadena;
     }
-
+    /**
+     * Constructor explícito
+     * 
+     * @param direccion Nombre de la calle, avenida o plaza
+     * @param tipoDeVia Especifica el tipo de vía (calle, avenida o plaza)
+     * @param portal Número del portal
+     * @param escalera Número de escalera
+     * @param letra Letra del domicilio
+     * @param edificio Nombre del edificio
+     */
     public Domicilio(String direccion, int tipoDeVia, int portal, int escalera, char letra, String edificio) {
         this.direccion = direccion;
         this.tipoDeVia = tipoDeVia;
@@ -169,7 +226,9 @@ public class Domicilio {
         this.letra = letra;
         this.edificio = edificio;
     }
-  
+    /**
+     * Constructor por defecto
+     */
     public Domicilio(){
         tipoDeVia = 0;
         direccion = null;

@@ -16,7 +16,8 @@ import java.util.ArrayList;
 import java.sql.Date;
 
 /**
- *
+ * Clase que realiza las gestiones de la base de datos
+ * 
  * @author draco
  */
 public class GestionBufete {
@@ -25,7 +26,13 @@ public class GestionBufete {
     private static Connection con = null;
     private static final String url = "jdbc:mysql://localhost:3306/bufete";
     
-    public static void establecerConexion (String user, String password) {
+    /**
+     * Establece una conexión con la base de datos
+     * 
+     * @param user Usuario de la base de datos
+     * @param password Contraseña del usuario
+     */
+    public static void establecerConexion(String user, String password) {
         try {
             con = DriverManager.getConnection(url, user, password);
         } catch (SQLException ex) {
@@ -34,14 +41,24 @@ public class GestionBufete {
             javax.swing.JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
         }
     }
-    
+    /**
+     * Comprueba si hay una conexión activa con la base de datos
+     * 
+     * @return Devuelve verdadero si hay conexión con la base de datos activa
+     */
     public boolean isConnected() {
         if (con == null)
             return false;
         else
             return true;
     }
-    
+    /**
+     * Busca los clientes que cumplen con los criterios de búsqueda
+     * 
+     * @param tipoBusqueda Establece el parámetro a comparar
+     * @param valor Valor con el cual se realiza la búsqueda
+     * @return Lista con los DNI de los clientes que cumplen los criterios de búsqueda
+     */
     public ArrayList<String[]> busqueda(int tipoBusqueda, String valor){ //TODO: demás casos
         int contador = 0;
         ArrayList<String[]> lista = new ArrayList<String[]>(); 
@@ -212,10 +229,14 @@ public class GestionBufete {
                 return lista;
             default:
                 return null;
-                
         } 
     }
-    
+    /** 
+     * Busca los datos de un cliente
+     * 
+     * @param nif DNI del cliente
+     * @return Datos del cliente
+     */
     public Cliente busquedaDatos(String nif){
         Cliente cliente = new Cliente();
         Identificador identificador = new Identificador(nif);
@@ -249,25 +270,22 @@ public class GestionBufete {
                 domicilio.setProvincia(rs.getString(8));
                 cliente.setDomicilio(domicilio);
             }
-
             pst = con.prepareStatement("SELECT numero, juzgado, tipo, abierto, minuta, pagado, procurador,"
                     + " procuradorContrario, fecha, expediente FROM procedimientos WHERE identificador='"+nif+"';");
             rs = pst.executeQuery();
-                while(rs.next()) { // Lo hace para todos los procedimientos
-                    procedimiento.setNig(rs.getString(1));
-                    procedimiento.setJuzgado(rs.getString(2));
-                    procedimiento.setTipoDeProcedimiento(rs.getString(3));
-                    procedimiento.setAbierto(rs.getBoolean(4));
-                    procedimiento.setMinuta(rs.getInt(5));
-                    procedimiento.setPagado(rs.getInt(6));
-                    procedimiento.setProcurador(rs.getString(7));
-                    procedimiento.setProcuradorContrario(rs.getString(8));
-                    procedimiento.setFecha(rs.getDate(9).toString());
-                    procedimiento.setExpediente(rs.getInt(10));
-                    cliente.addProcedimiento(procedimiento);
-
-            }
-            
+            while(rs.next()) { // Lo hace para todos los procedimientos
+                procedimiento.setNig(rs.getString(1));
+                procedimiento.setJuzgado(rs.getString(2));
+                procedimiento.setTipoDeProcedimiento(rs.getString(3));
+                procedimiento.setAbierto(rs.getBoolean(4));
+                procedimiento.setMinuta(rs.getInt(5));
+                procedimiento.setPagado(rs.getInt(6));
+                procedimiento.setProcurador(rs.getString(7));
+                procedimiento.setProcuradorContrario(rs.getString(8));
+                procedimiento.setFecha(rs.getDate(9).toString());
+                procedimiento.setExpediente(rs.getInt(10));
+                cliente.addProcedimiento(procedimiento);
+            } 
         } catch (SQLException ex) {
             Logger lgr = Logger.getLogger(GestionBufete.class.getName());
             lgr.log(Level.SEVERE, ex.getMessage(), ex);
@@ -285,24 +303,20 @@ public class GestionBufete {
         return cliente;
     }
     /**
+     * Añade un nuevo cliente a la base de datos
      * 
-     * @param nombre
-     * @param apellido1
-     * @param apellido2
-     * @param nif
-     * @param juridica
-     * @param domicilio
-     * @param localidad
-     * @param codigo
-     * @param con 
+     * @param nombre Nombre del cliente
+     * @param apellido1 Primer apellido del cliente
+     * @param apellido2 Segundo apellido del cliente
+     * @param nif DNI del cliente
+     * @param juridica Indica si es una persona jurídica o no (física)
+     * @param domicilio Domicilio del cliente
+     * @param localidad Localidad de residencia del cliente
+     * @param codigo Código postal
      */
     public void addCliente (String nombre, String apellido1, String apellido2, String nif,
             boolean juridica, String domicilio, String localidad, int codigo) {
         try{
-            /*pst = con.prepareStatement("INSERT INTO clientes (nombre, apellido1, apellido2,"
-                    + " identificador, juridica, domicilio, localidad, codigo) VALUES " +
-                    "('" + nombre +"', '"+apellido1+"', '"+apellido2+"', '"+nif+"', '" + juridica
-                    + "', '" + domicilio + "', '" + localidad + "', " + codigo + ");");*/
             pst =con.prepareStatement("INSERT INTO clientes (nombre, apellido1, apellido2,"
                     +" identificador, juridica) VALUES ('"+nombre+"', '"+apellido1+"', '"
                     +apellido2+"', '"+nif+"', " + juridica+");");
@@ -326,7 +340,20 @@ public class GestionBufete {
             }
         }
     }
-    
+    /**
+     * Añade un procedimiento al cliente
+     * 
+     * @param nig DNI del cliente
+     * @param numero Número del procedimiento
+     * @param juzgado Juzgado que lleva el procedimiento
+     * @param tipo Tipo de procedimiento
+     * @param abierto Indica si el procedimiento está abierto o no
+     * @param minuta Pago acordado
+     * @param pagado Cantidad recibida hasta la fecha
+     * @param fecha Fecha de vencimiento
+     * @param procurador Procurador de la parte contratante
+     * @param procuradorContrario Procurador de la parte contraria
+     */
     public void addProcedimiento (String nig, String numero, String juzgado, String tipo, boolean abierto, 
             float minuta, float pagado, String fecha, String procurador, String procuradorContrario) {
         int ab = (abierto) ? 1 : 0;
@@ -349,20 +376,19 @@ public class GestionBufete {
             }
         }
     }
-    
-    /**
-     * 
-     * @param nombre
-     * @param apellido1
-     * @param apellido2
-     * @param nif
-     * @param juridica
-     * @param domicilio
-     * @param localidad
-     * @param codigo
-     * @param identificador
-     * @param con 
-     */
+/**
+ * Actualiza los datos del cliente
+ * 
+ * @param nombre Valor actualizado del nombre del cliente
+ * @param apellido1 Valor actualizado del primer apellido del cliente
+ * @param apellido2 Valor actualizado del segundo apellido del cliente
+ * @param nif Valor actualizado del DNI del cliente
+ * @param juridica Indica si es una persona jurídica o no (física)
+ * @param domicilio Valor actualizado del domicilio del cliente
+ * @param localidad Valor actualizado de la localidad de residencia del cliente
+ * @param codigo Valor actualizado del código postal
+ * @param identificador Valor actualizado no actualizado del DNI
+ */
     public void updateCliente (String nombre, String apellido1, String apellido2, String nif,
             boolean juridica,
             String domicilio, String localidad, String codigo, String identificador) {
@@ -390,7 +416,20 @@ public class GestionBufete {
             }
         }
     }
-    
+    /**
+     * Actualiza los datos del procedimiento
+     * 
+     * @param numero Valor actualizado del número del procedimiento
+     * @param juzgado Valor actualizado del juzgado que lleva el procedimiento
+     * @param tipo Valor actualizado del tipo de procedimiento
+     * @param abierto Indica si el procedimiento está abierto o no
+     * @param minuta Valor actualizado del pago acordado
+     * @param pagado Valor actualizado de la cantidad recibida hasta la fecha
+     * @param fecha Valor actualizado de la fecha de vencimiento
+     * @param procurador Valor actualizado del procurador de la parte contratante
+     * @param procuradorContrario Valor actualizado del procurador de la parte contraria
+     * @param anotaciones Valor actualizado del campo de anotaciones
+     */
     public void updateProcedimiento(String numero, String juzgado, String tipo, boolean abierto, float minuta,
             float pagado, String fecha, String procurador, String procuradorContrario, String anotaciones){
         try{

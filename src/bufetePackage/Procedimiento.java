@@ -6,7 +6,8 @@
 package bufetePackage;
 
 /**
- *
+ * Clase que rige los procedimientos
+ * 
  * @author draco
  */
 public class Procedimiento {
@@ -23,7 +24,6 @@ public class Procedimiento {
     private String procurador;    
     private String procuradorContrario;
     private String fecha;
-    
     private int expediente;
 
     /**
@@ -34,7 +34,6 @@ public class Procedimiento {
     public int getExpediente() {
         return expediente;
     }
-
     /**
      * Set the value of expediente
      *
@@ -43,8 +42,6 @@ public class Procedimiento {
     public void setExpediente(int expediente) {
         this.expediente = expediente;
     }
-
-
     /**
      * Get the value of fecha
      *
@@ -53,7 +50,6 @@ public class Procedimiento {
     public String getFecha() {
         return fecha;
     }
-
     /**
      * Set the value of fecha
      *
@@ -62,8 +58,6 @@ public class Procedimiento {
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
-
-
     /**
      * Get the value of procuradorContrario
      *
@@ -72,7 +66,6 @@ public class Procedimiento {
     public String getProcuradorContrario() {
         return procuradorContrario;
     }
-
     /**
      * Set the value of procuradorContrario
      *
@@ -81,8 +74,6 @@ public class Procedimiento {
     public void setProcuradorContrario(String procuradorContrario) {
         this.procuradorContrario = procuradorContrario;
     }
-
-
     /**
      * Get the value of procurador
      *
@@ -91,7 +82,6 @@ public class Procedimiento {
     public String getProcurador() {
         return procurador;
     }
-
     /**
      * Set the value of procurador
      *
@@ -100,7 +90,6 @@ public class Procedimiento {
     public void setProcurador(String procurador) {
         this.procurador = procurador;
     }
-
     /**
      * Get the value of pagado
      *
@@ -109,7 +98,6 @@ public class Procedimiento {
     public float getPagado() {
         return pagado;
     }
-
     /**
      * Set the value of pagado
      *
@@ -118,7 +106,6 @@ public class Procedimiento {
     public void setPagado(float pagado) {
         this.pagado = pagado;
     }
-
     /**
      * Get the value of abierto
      *
@@ -127,7 +114,6 @@ public class Procedimiento {
     public boolean isAbierto() {
         return abierto;
     }
-
     /**
      * Set the value of abierto
      *
@@ -136,8 +122,6 @@ public class Procedimiento {
     public void setAbierto(boolean abierto) {
         this.abierto = abierto;
     }
-
-
     /**
      * Get the value of numeroProcedimiento
      *
@@ -146,7 +130,6 @@ public class Procedimiento {
     public String getNumeroProcedimiento() {
         return numeroProcedimiento;
     }
-
     /**
      * Set the value of numeroProcedimiento
      *
@@ -155,8 +138,6 @@ public class Procedimiento {
     public void setNumeroProcedimiento(String numeroProcedimiento) {
         this.numeroProcedimiento = numeroProcedimiento;
     }*/
-
-
     /**
      * Get the value of minuta
      *
@@ -165,7 +146,6 @@ public class Procedimiento {
     public float getMinuta() {
         return minuta;
     }
-
     /**
      * Set the value of minuta
      *
@@ -174,8 +154,6 @@ public class Procedimiento {
     public void setMinuta(float minuta) {
         this.minuta = minuta;
     }
-
-
     /**
      * Get the value of NIG
      *
@@ -184,7 +162,6 @@ public class Procedimiento {
     public String getNig() {
         return nig;
     }
-
     /**
      * Set the value of nig
      *
@@ -193,8 +170,6 @@ public class Procedimiento {
     public void setNig(String nig) {
         this.nig = nig;
     }
-
-
     /**
      * Get the value of tipoDeProcedimiento
      *
@@ -203,8 +178,7 @@ public class Procedimiento {
     public String getTipoDeProcedimiento() {
         return tipoDeProcedimiento;
     }
-
-    /**
+   /**
      * Set the value of tipoDeProcedimiento
      *
      * @param tipoDeProcedimiento new value of tipoDeProcedimiento
@@ -212,8 +186,6 @@ public class Procedimiento {
     public void setTipoDeProcedimiento(String tipoDeProcedimiento) {
         this.tipoDeProcedimiento = tipoDeProcedimiento;
     }
-
-
     /**
      * Get the value of anotaciones
      *
@@ -222,7 +194,6 @@ public class Procedimiento {
     public String getAnotaciones() {
         return anotaciones;
     }
-
     /**
      * Set the value of anotaciones
      *
@@ -231,8 +202,6 @@ public class Procedimiento {
     public void setAnotaciones(String anotaciones) {
         this.anotaciones = anotaciones;
     }
-
-
     /**
      * Get the value of judicial
      *
@@ -241,7 +210,6 @@ public class Procedimiento {
     public boolean isJudicial() {
         return judicial;
     }
-
     /**
      * Set the value of judicial
      *
@@ -250,8 +218,6 @@ public class Procedimiento {
     public void setJudicial(boolean judicial) {
         this.judicial = judicial;
     }
-
-
     /**
      * Get the value of juzgado
      *
@@ -260,7 +226,6 @@ public class Procedimiento {
     public String getJuzgado() {
         return juzgado;
     }
-
     /**
      * Set the value of juzgado
      *
@@ -269,7 +234,20 @@ public class Procedimiento {
     public void setJuzgado(String juzgado) {
         this.juzgado = juzgado;
     }
-
+    /**
+     * Construcctor de la clase
+     * @param juzgado Juzgado que lleva el procedimiento
+     * @param judicial Indica si el procedimiento es o no judicial
+     * @param tipoDeProcedimiento Tipo de procedimiento
+     * @param nig DNI del cliente
+     * @param minuta Pago acordado
+     * @param numeroProcedimiento Número del procedimiento
+     * @param abierto Indica si el procedimiento está o no abierto
+     * @param pagado Cantidad abonada hasta la fecha
+     * @param procurador Procurador de la parte contratante
+     * @param procuradorContrario Procurador de la parte contraria
+     * @param fecha Fecha de vencimiento
+     */
     public Procedimiento(String juzgado, boolean judicial, String tipoDeProcedimiento, String nig, float minuta, String numeroProcedimiento, boolean abierto, float pagado, String procurador, String procuradorContrario, String fecha) {
         this.juzgado = juzgado;
         this.judicial = judicial;
@@ -283,6 +261,8 @@ public class Procedimiento {
         this.procuradorContrario = procuradorContrario;
         this.fecha = fecha;
     }
-
+    /**
+     * Constructor por defecto
+     */
     public Procedimiento(){}
 }
